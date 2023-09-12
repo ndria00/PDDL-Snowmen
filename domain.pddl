@@ -70,7 +70,7 @@
                 ; always remove the snow - if present or not it does not matter
                 (not (snow ?to))
 
-                ; increase ball size if needed
+                ; increase ball size when the moved ball rolls on a location that contains snow
                 (when (and (snow ?to) ( < (ball_size ?b)) 2) ((increase (ball_size ?b) 1)))
                 
                 ; decrease the smallest ball size when stacking another ball on top
@@ -78,6 +78,10 @@
                 
                 ; assign default smallest size when moving a ball from a stack of size one 
                 (when ( = (balls_in_location ?to ) 1) (assign (smallest_ball_at ?to) 4))
+                
+                ; remains to handle the case in which a ball of size 1 is stacked on top of a ball of size 3
+                ; in that case (given that it is possible) the smallest_ball_at has to be set in a different way
+                ; I cannot do a simple decrease because it would lead to an inconsistent state of the game 
             )  
     )
 
