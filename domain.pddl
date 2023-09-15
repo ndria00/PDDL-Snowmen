@@ -1,6 +1,11 @@
 (define (domain numeric_basic)
     (:requirements :
         :typing
+        :negative-preconditions
+        :equality
+        :disjunctive-preconditions
+        :conditional-effects
+        :action-costs
     )
 
     (:types
@@ -72,8 +77,8 @@
                 (increase (balls_in_location ?to) 1)
                 (decrease (balls_in_location ?from) 1)
                 
-                (not (character_at ?ppos))
-                (character_at ?from)
+                ; move the character only when he is not in front of a partially-completed snowman
+                (when (and (< (balls_in_location ?from) 2)) (and (not (character_at ?ppos)) (character_at ?from)))
 
                 ; always remove the snow - if present or not it does not matter
                 (not (snow ?to))
