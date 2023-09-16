@@ -1,6 +1,7 @@
 (define (problem a_b)
 
     (:domain numeric_basic)
+    (:requirements :fluents)
 
     (:objects
         right - direction
