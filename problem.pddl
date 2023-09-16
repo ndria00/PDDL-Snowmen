@@ -41,7 +41,7 @@
     )
 
     (:init
-        ; (= (total-cost) 0)
+        (= (total-cost) 0)
         (next loc_1_1 loc_2_1 right)
         (next loc_1_1 loc_1_2 up)
         (next loc_1_2 loc_2_2 right)
@@ -136,17 +136,17 @@
         ; (ball_size_small ball_2)
         (= (ball_size ball_2) 1)
         
-        ; (ball_at ball_3 loc_4_1)
-        ; ; (ball_size_small ball_3)
-        ; (= (ball_size ball_3) 1)
+        (ball_at ball_3 loc_4_1)
+        ; (ball_size_small ball_3)
+        (= (ball_size ball_3) 1)
 
-        ; (ball_at ball_4 loc_4_2)
-        ; ; (ball_size_small ball_4)        
-        ; (= (ball_size ball_4) 1)
+        (ball_at ball_4 loc_4_2)
+        ; (ball_size_small ball_4)        
+        (= (ball_size ball_4) 1)
         
-        ; (ball_at ball_5 loc_4_4)
-        ; ; (ball_size_small ball_5)        
-        ; (= (ball_size ball_5) 1)
+        (ball_at ball_5 loc_4_4)
+        ; (ball_size_small ball_5)        
+        (= (ball_size ball_5) 1)
 
         (snow loc_1_3)
         (snow loc_1_4)
@@ -225,21 +225,21 @@
         (= (biggest_ball_at loc_3_5) 4)
         (= (balls_in_location loc_3_5) 0)
         ; loc_4_1 - location
-        (= (smallest_ball_at loc_4_1) 4)
-        (= (biggest_ball_at loc_4_1) 4)
-        (= (balls_in_location loc_4_1) 0)
+        (= (smallest_ball_at loc_4_1) 1)
+        (= (biggest_ball_at loc_4_1) 1)
+        (= (balls_in_location loc_4_1) 1)
         ; loc_4_2 - location
-        (= (smallest_ball_at loc_4_2) 4)
-        (= (biggest_ball_at loc_4_2) 4)
-        (= (balls_in_location loc_4_2) 0)
+        (= (smallest_ball_at loc_4_2) 1)
+        (= (biggest_ball_at loc_4_2) 1)
+        (= (balls_in_location loc_4_2) 1)
         ; loc_4_3 - location
         (= (smallest_ball_at loc_4_3) 4)
         (= (biggest_ball_at loc_4_3) 4)
         (= (balls_in_location loc_4_3) 0)
         ; loc_4_4 - location
-        (= (smallest_ball_at loc_4_4) 4)
-        (= (biggest_ball_at loc_4_4) 4)
-        (= (balls_in_location loc_4_4) 0)
+        (= (smallest_ball_at loc_4_4) 1)
+        (= (biggest_ball_at loc_4_4) 1)
+        (= (balls_in_location loc_4_4) 1)
         ; loc_4_5 - location
         (= (smallest_ball_at loc_4_5) 4)
         (= (biggest_ball_at loc_4_5) 4)
@@ -269,8 +269,8 @@
     )
 
     (:goal
-        (and (= (completed_snowmen) 1))
+        (and (= (completed_snowmen) 2))
     )
 
-    ; (:metric minimize (total-cost))
+    (:metric minimize (total-cost))
 )

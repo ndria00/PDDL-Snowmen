@@ -34,6 +34,7 @@
         ; location is empty and a ball of whatever size may be stacked on top of it
         (smallest_ball_at ?l)
         (biggest_ball_at ?l)
+        (total-cost)
     )
 
     ; considers player moves when no balls are in the destination cell
@@ -83,7 +84,7 @@
                 ; always remove the snow - if present or not it does not matter
                 (not (snow ?to))
                 ; assign the smallest ball size when stacking a ball on top of a (possibly empty) stack
-                (assign (smallest_ball_at ?to) (ball_size ?b)) ; <- stack or roll
+                (when (and (not (snow ?to))) (and (assign (smallest_ball_at ?to) (ball_size ?b)))) 
                 
                 ; set biggest ball after move when the to location was not occupied and not covered by snow 
                 (when (and (= (balls_in_location ?to) 0) (not (snow ?to))) (and (assign (biggest_ball_at ?to) (ball_size ?b))))
@@ -94,17 +95,21 @@
 
                 ; increase ball size when the moved ball rolls on a location that contains snow
                 ; set biggest ball after move when the to location was not occupied, it was covered by snow and the moved ball was of size <= 2
-                (when (and (snow ?to) ( <= (ball_size ?b) 2)) (and (increase (ball_size ?b) 1) (assign (biggest_ball_at ?to) (+ (ball_size ?b) 1) ))) ; <- roll
+                (when (and (snow ?to) ( <= (ball_size ?b) 2)) (and (increase (ball_size ?b) 1) 
+                                                                (assign (biggest_ball_at ?to) (+ (ball_size ?b) 1))
+                                                                (assign (smallest_ball_at ?to) (+ (ball_size ?b) 1))))
 
                 ; assign default smallest and biggest size when moving a ball from a stack of size one 
                 (when (and ( = (balls_in_location ?from ) 1)) (and (assign (smallest_ball_at ?from) 4)
-                                                                (assign (biggest_ball_at ?from) 4))) ; <- roll
+                                                                (assign (biggest_ball_at ?from) 4)))
 
                 ; unstack from pile of size 2
                 (when (and (= (balls_in_location ?from ) 2) ) (and (assign (smallest_ball_at ?from) (biggest_ball_at ?from))))
                 
                 ; increase number of completed snowmen when stacking the third ball in some location
                 (when (and (= (balls_in_location ?to) 2)) (and (increase (completed_snowmen) 1)))
+
+                (increase (total-cost) 1)
             )  
     ) 
 
