@@ -219,129 +219,128 @@
         (snow loc_4_2)
         (snow loc_4_6)
 
-        (= (smallest_ball_at loc_3_2) 4)
-        (= (biggest_ball_at loc_3_2) 4)
-        (= (balls_in_location loc_3_2) 0)
-
-        (= (smallest_ball_at loc_1_1) 4)
-        (= (biggest_ball_at loc_1_1) 4)
-        (= (balls_in_location loc_1_1) 0)
-
-        (= (smallest_ball_at loc_6_6) 4)
-        (= (biggest_ball_at loc_6_6) 4)
-        (= (balls_in_location loc_6_6) 0)
-
-        (= (smallest_ball_at loc_4_1) 4)
-        (= (biggest_ball_at loc_4_1) 4)
-        (= (balls_in_location loc_4_1) 0)
-
-        (= (smallest_ball_at loc_3_5) 4)
-        (= (biggest_ball_at loc_3_5) 4)
-        (= (balls_in_location loc_3_5) 0)
-
-        (= (smallest_ball_at loc_1_4) 4)
-        (= (biggest_ball_at loc_1_4) 4)
-        (= (balls_in_location loc_1_4) 0)
-
-        (= (smallest_ball_at loc_2_2) 4)
-        (= (biggest_ball_at loc_2_2) 4)
-        (= (balls_in_location loc_2_2) 0)
-
-        (= (smallest_ball_at loc_6_2) 4)
-        (= (biggest_ball_at loc_6_2) 4)
-        (= (balls_in_location loc_6_2) 0)
-
-        (= (smallest_ball_at loc_5_4) 4)
-        (= (biggest_ball_at loc_5_4) 4)
-        (= (balls_in_location loc_5_4) 0)
-
-        (= (smallest_ball_at loc_5_3) 4)
-        (= (biggest_ball_at loc_5_3) 4)
-        (= (balls_in_location loc_5_3) 0)
-
-        (= (smallest_ball_at loc_4_4) 4)
-        (= (biggest_ball_at loc_4_4) 4)
-        (= (balls_in_location loc_4_4) 0)
-
-        (= (smallest_ball_at loc_6_5) 4)
-        (= (biggest_ball_at loc_6_5) 4)
-        (= (balls_in_location loc_6_5) 0)
-
-        (= (smallest_ball_at loc_1_3) 4)
-        (= (biggest_ball_at loc_1_3) 4)
-        (= (balls_in_location loc_1_3) 0)
-
-        (= (smallest_ball_at loc_3_6) 4)
-        (= (biggest_ball_at loc_3_6) 4)
-        (= (balls_in_location loc_3_6) 0)
-
         (= (smallest_ball_at loc_2_5) 4)
         (= (biggest_ball_at loc_2_5) 4)
         (= (balls_in_location loc_2_5) 0)
-
-        (= (smallest_ball_at loc_2_3) 4)
-        (= (biggest_ball_at loc_2_3) 4)
-        (= (balls_in_location loc_2_3) 0)
-
-        (= (smallest_ball_at loc_1_5) 4)
-        (= (biggest_ball_at loc_1_5) 4)
-        (= (balls_in_location loc_1_5) 0)
-
-        (= (smallest_ball_at loc_4_2) 4)
-        (= (biggest_ball_at loc_4_2) 4)
-        (= (balls_in_location loc_4_2) 0)
-
-        (= (smallest_ball_at loc_5_5) 4)
-        (= (biggest_ball_at loc_5_5) 4)
-        (= (balls_in_location loc_5_5) 0)
-
-        (= (smallest_ball_at loc_6_3) 4)
-        (= (biggest_ball_at loc_6_3) 4)
-        (= (balls_in_location loc_6_3) 0)
-
-        (= (smallest_ball_at loc_6_4) 4)
-        (= (biggest_ball_at loc_6_4) 4)
-        (= (balls_in_location loc_6_4) 0)
-
-        (= (smallest_ball_at loc_3_1) 4)
-        (= (biggest_ball_at loc_3_1) 4)
-        (= (balls_in_location loc_3_1) 0)
-
-        (= (smallest_ball_at loc_4_5) 4)
-        (= (biggest_ball_at loc_4_5) 4)
-        (= (balls_in_location loc_4_5) 0)
 
         (= (smallest_ball_at loc_5_2) 4)
         (= (biggest_ball_at loc_5_2) 4)
         (= (balls_in_location loc_5_2) 0)
 
-        (= (smallest_ball_at loc_2_4) 4)
-        (= (biggest_ball_at loc_2_4) 4)
-        (= (balls_in_location loc_2_4) 0)
+        (= (smallest_ball_at loc_1_4) 4)
+        (= (biggest_ball_at loc_1_4) 4)
+        (= (balls_in_location loc_1_4) 0)
 
-        (= (smallest_ball_at loc_1_2) 4)
-        (= (biggest_ball_at loc_1_2) 4)
-        (= (balls_in_location loc_1_2) 0)
+        (= (smallest_ball_at loc_4_4) 4)
+        (= (biggest_ball_at loc_4_4) 4)
+        (= (balls_in_location loc_4_4) 0)
 
-        (= (smallest_ball_at loc_1_6) 4)
-        (= (biggest_ball_at loc_1_6) 4)
-        (= (balls_in_location loc_1_6) 0)
+        (= (smallest_ball_at loc_6_4) 4)
+        (= (biggest_ball_at loc_6_4) 4)
+        (= (balls_in_location loc_6_4) 0)
 
         (= (smallest_ball_at loc_3_3) 4)
         (= (biggest_ball_at loc_3_3) 4)
         (= (balls_in_location loc_3_3) 0)
 
-        (= (smallest_ball_at loc_4_6) 4)
-        (= (biggest_ball_at loc_4_6) 4)
-        (= (balls_in_location loc_4_6) 0)
+        (= (smallest_ball_at loc_3_5) 4)
+        (= (biggest_ball_at loc_3_5) 4)
+        (= (balls_in_location loc_3_5) 0)
+
+        (= (smallest_ball_at loc_6_2) 4)
+        (= (biggest_ball_at loc_6_2) 4)
+        (= (balls_in_location loc_6_2) 0)
+
+        (= (smallest_ball_at loc_4_1) 4)
+        (= (biggest_ball_at loc_4_1) 4)
+        (= (balls_in_location loc_4_1) 0)
+
+        (= (smallest_ball_at loc_1_1) 4)
+        (= (biggest_ball_at loc_1_1) 4)
+        (= (balls_in_location loc_1_1) 0)
+
+        (= (smallest_ball_at loc_5_4) 4)
+        (= (biggest_ball_at loc_5_4) 4)
+        (= (balls_in_location loc_5_4) 0)
 
         (= (smallest_ball_at loc_6_1) 4)
         (= (biggest_ball_at loc_6_1) 4)
         (= (balls_in_location loc_6_1) 0)
 
+        (= (smallest_ball_at loc_2_3) 4)
+        (= (biggest_ball_at loc_2_3) 4)
+        (= (balls_in_location loc_2_3) 0)
+
+        (= (smallest_ball_at loc_1_2) 4)
+        (= (biggest_ball_at loc_1_2) 4)
+        (= (balls_in_location loc_1_2) 0)
+
+        (= (smallest_ball_at loc_4_2) 4)
+        (= (biggest_ball_at loc_4_2) 4)
+        (= (balls_in_location loc_4_2) 0)
+
+        (= (smallest_ball_at loc_3_6) 4)
+        (= (biggest_ball_at loc_3_6) 4)
+        (= (balls_in_location loc_3_6) 0)
+
+        (= (smallest_ball_at loc_5_5) 4)
+        (= (biggest_ball_at loc_5_5) 4)
+        (= (balls_in_location loc_5_5) 0)
+
+        (= (smallest_ball_at loc_2_2) 4)
+        (= (biggest_ball_at loc_2_2) 4)
+        (= (balls_in_location loc_2_2) 0)
+
+        (= (smallest_ball_at loc_1_3) 4)
+        (= (biggest_ball_at loc_1_3) 4)
+        (= (balls_in_location loc_1_3) 0)
+
+        (= (smallest_ball_at loc_6_3) 4)
+        (= (biggest_ball_at loc_6_3) 4)
+        (= (balls_in_location loc_6_3) 0)
+
+        (= (smallest_ball_at loc_6_5) 4)
+        (= (biggest_ball_at loc_6_5) 4)
+        (= (balls_in_location loc_6_5) 0)
+
+        (= (smallest_ball_at loc_4_6) 4)
+        (= (biggest_ball_at loc_4_6) 4)
+        (= (balls_in_location loc_4_6) 0)
+
+        (= (smallest_ball_at loc_1_6) 4)
+        (= (biggest_ball_at loc_1_6) 4)
+        (= (balls_in_location loc_1_6) 0)
+
+        (= (smallest_ball_at loc_3_2) 4)
+        (= (biggest_ball_at loc_3_2) 4)
+        (= (balls_in_location loc_3_2) 0)
+
+        (= (smallest_ball_at loc_3_1) 4)
+        (= (biggest_ball_at loc_3_1) 4)
+        (= (balls_in_location loc_3_1) 0)
+
+        (= (smallest_ball_at loc_2_4) 4)
+        (= (biggest_ball_at loc_2_4) 4)
+        (= (balls_in_location loc_2_4) 0)
+
+        (= (smallest_ball_at loc_5_3) 4)
+        (= (biggest_ball_at loc_5_3) 4)
+        (= (balls_in_location loc_5_3) 0)
+
+        (= (smallest_ball_at loc_4_5) 4)
+        (= (biggest_ball_at loc_4_5) 4)
+        (= (balls_in_location loc_4_5) 0)
+
+        (= (smallest_ball_at loc_6_6) 4)
+        (= (biggest_ball_at loc_6_6) 4)
+        (= (balls_in_location loc_6_6) 0)
+
+        (= (smallest_ball_at loc_1_5) 4)
+        (= (biggest_ball_at loc_1_5) 4)
+        (= (balls_in_location loc_1_5) 0)
+
         (= (completed_snowmen) 0)
      )
-        (goal)
 
     (:goal (and (= (completed_snowmen) 2)))
 

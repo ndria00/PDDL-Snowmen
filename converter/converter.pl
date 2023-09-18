@@ -12,6 +12,8 @@ open($fh, "<", $file) || die("File not found!") ;
 my $init = 0;
 my $goal = 0;
 my %ball_name_size;
+my $num_balls = 0;
+
 while(<$fh>){
     chomp($_);
     #change domain name
@@ -24,17 +26,11 @@ while(<$fh>){
         $_ = ""
     }
 
-    if($goal and $_ =~ /\(and\s+\(goal/){
+    if($goal and $_ =~ /\(\s*goal/){
         $_ = ""
     }
 
     if($_ =~ m/^\s*\)\s*$/ and $goal){
-        my $num_balls = 0;
-        foreach $key (keys %locations_balls){
-            if($locations_balls{$key} ne "0"){
-                $num_balls = $num_balls + 1;
-            }
-        }
         $num_balls = $num_balls / 3;
         $_ = "\n    (:goal (and (= (completed_snowmen) $num_balls)))\n";
         $goal = 0
@@ -73,6 +69,7 @@ while(<$fh>){
             $_.= "\n        (= (smallest_ball_at $ball_location) $ball_size)";
             $_.= "\n        (= (biggest_ball_at $ball_location) $ball_size)";
             $_.= "\n        (= (balls_in_location $ball_location) 1)\n";
+            $num_balls = $num_balls + 1;
         }
         
         if($_ =~ m/^\s*\)\s*$/){
