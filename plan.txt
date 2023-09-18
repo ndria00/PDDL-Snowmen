@@ -1,0 +1,4 @@
+0.0: (move_character loc_3_3 loc_2_3 left)
+1.0: (move_character loc_2_3 loc_1_3 left)
+2.0: (move_character loc_1_3 loc_1_4 up)
+3.0: (move_ball ball_1 loc_1_4 loc_2_4 loc_3_4 right)
