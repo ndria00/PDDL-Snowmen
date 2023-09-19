@@ -20,7 +20,11 @@
         ; character position
         (character_at ?l - location)
         (ball_at ?b -ball ?l - location)
+        
+        (choice ?b - ball)
+        (choice_made)
     )
+
     (:functions
         (balls_in_location ?loc - location)
         (ball_size ?b - ball)
@@ -35,6 +39,12 @@
         (total-cost)
     )
 
+    (:action choose_ball
+        :parameters (?b - ball)
+        :precondition (and (not (choice_made)))
+        :effect (and (choice_made) (choice ?b))
+    )
+    
     ; considers player moves when no balls are in the destination cell
     (:action move_character
         :parameters 
@@ -44,6 +54,7 @@
                 (next ?from ?to ?dir)
                 (character_at ?from)
                 (= (balls_in_location ?to) 0)
+                (choice_made)
             )
         :effect 
             (and 
@@ -66,6 +77,7 @@
                 ; remove the possiblity to unstack a completed snowman 
                 ; - check if this is not possible in the real game (it may also be redundant)
                 ;(< (balls_in_location ?from) 3)
+                (choice ?b)
             )
         :effect         
             (and
@@ -82,7 +94,7 @@
                 ; always remove the snow - if present or not it does not matter
                 (not (snow ?to))
                 ; assign the smallest ball size when stacking a ball on top of a (possibly empty) stack
-                (when (and (not (snow ?to))) (and (assign (smallest_ball_at ?to) (ball_size ?b))))
+                (when (and (not (snow ?to))) (and (assign (smallest_ball_at ?to) (ball_size ?b)))) 
                 
                 ; set biggest ball after move when the to location was not occupied and not covered by snow 
                 (when (and (= (balls_in_location ?to) 0) (not (snow ?to))) (and (assign (biggest_ball_at ?to) (ball_size ?b))))
@@ -94,9 +106,9 @@
 
                 ; increase ball size when the moved ball rolls on a location that contains snow
                 ; set biggest ball after move when the to location was not occupied, it was covered by snow and the moved ball was of size <= 2
-                (when (and (snow ?to) ( <= (ball_size ?b) 2)) (and  (assign (biggest_ball_at ?to) (+ (ball_size ?b) 1))
-                                                                    (assign (smallest_ball_at ?to) (+ (ball_size ?b) 1))
-                                                                    (increase (ball_size ?b) 1)))
+                (when (and (snow ?to) ( <= (ball_size ?b) 2)) (and (increase (ball_size ?b) 1) 
+                                                                (assign (biggest_ball_at ?to) (+ (ball_size ?b) 1))
+                                                                (assign (smallest_ball_at ?to) (+ (ball_size ?b) 1))))
 
                 ; assign default smallest and biggest size when moving a ball from a stack of size one 
                 (when (and ( = (balls_in_location ?from ) 1)) (and (assign (smallest_ball_at ?from) 4)
@@ -114,6 +126,8 @@
                                                              (assign (smallest_ball_at ?from) 2)
                                                              (assign (biggest_ball_at ?from) 3)))
                 (increase (total-cost) 1)
+                (not (choice_made))
+                (not (choice ?b))
             )  
     ) 
 
