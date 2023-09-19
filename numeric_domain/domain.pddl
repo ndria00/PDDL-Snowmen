@@ -67,7 +67,7 @@
                 (< (smallest_ball_at ?from) (smallest_ball_at ?to))
                 ; remove the possiblity to unstack a completed snowman 
                 ; - check if this is not possible in the real game (it may also be redundant)
-                (< (balls_in_location ?from) 3)
+                ;(< (balls_in_location ?from) 3)
             )
         :effect         
             (and
@@ -108,7 +108,12 @@
                 
                 ; increase number of completed snowmen when stacking the third ball in some location
                 (when (and (= (balls_in_location ?to) 2)) (and (increase (completed_snowmen) 1)))
-
+                
+                ; when breaking down a completed snowman the smallest balls in from becomes of size 2 while
+                ; the biggest becomes of size 3. Of course the number of completed snomen must be decreased
+                (when (and (= (balls_in_location ?from ) 3)) (and (assign (completed_snowmen) (- (completed_snowmen) 1))
+                                                             (assign (smallest_ball_at ?from) 2)
+                                                             (assign (biggest_ball_at ?from) 3)))
                 (increase (total-cost) 1)
             )  
     ) 
