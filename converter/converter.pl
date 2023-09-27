@@ -10,6 +10,8 @@ my %balls_locations;
 my %location_max_ball;
 my %location_min_ball;
 my %location_num_ball;
+my $num_balls_of_size_three = 0;
+my $snowmen_to_build;
 
 open($fh, "<", $file) || die("File not found!") ;
 my $init = 0;
@@ -34,8 +36,7 @@ while(<$fh>){
     }
 
     if($_ =~ m/^\s*\)\s*$/ and $goal){
-        $num_balls = $num_balls / 3;
-        $_ = "\n    (:goal (and (= (completed_snowmen) $num_balls)))\n";
+        $_ = "\n    (:goal (and (= (completed_snowmen) $snowmen_to_build)))\n";
         $goal = 0
     }
     if($init == 0 and $_ =~ m/^\s+(loc\_\d+\_\d+)\s+\-\s+location/){
@@ -94,12 +95,18 @@ while(<$fh>){
             foreach $key (keys %locations_balls){
                 $smallest_ball = $location_min_ball{$key};
                 $biggest_ball = $location_max_ball{$key};
+                if($location_max_ball{$key} == 3){
+                    $num_balls_of_size_three += 1;
+                }
                 $num_balls_loc = $location_num_ball{$key};
                 $line.= "\n        (= (smallest_ball_at $key) $smallest_ball)";
                 $line.= "\n        (= (biggest_ball_at $key) $biggest_ball)";
                 $line.= "\n        (= (balls_in_location $key) $num_balls_loc)\n";
             }
             $line.="\n        (= (completed_snowmen) 0)";
+            $snowmen_to_build = $num_balls / 3;
+            # $line.="\n        (= (snowmen_to_build) $snowmen_to_build)";
+            # $line.="\n        (= (balls_of_size_three) $num_balls_of_size_three)";
             $line.="\n ".$_;
             $_=$line;
             $init=0;
