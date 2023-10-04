@@ -99,8 +99,13 @@ while(<$fh>){
                     $num_balls_of_size_three += 1;
                 }
                 $num_balls_loc = $location_num_ball{$key};
+                # if($smallest_ball != 4){
                 $line.= "\n        (= (smallest_ball_at $key) $smallest_ball)";
+                # }
+                # if($biggest_ball != 4){
                 $line.= "\n        (= (biggest_ball_at $key) $biggest_ball)";
+                # }
+
                 $line.= "\n        (= (balls_in_location $key) $num_balls_loc)\n";
             }
             $line.="\n        (= (completed_snowmen) 0)";
